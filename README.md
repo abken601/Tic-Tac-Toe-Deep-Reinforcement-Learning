@@ -7,3 +7,6 @@ In this experiment, we set up a 2-layer network and 9 outputs. They correspond t
 We train our DQN by 200,000 episodes. In every 1,000 episodes, we use the 'trained' network to play 1,000 games and collect some stats, the result is as follows.
 
 
+
+
+Despite a disappointing result, you may run the above simulation from main.py in the repository. We will improve the experiment by introducing DDQN (Deep Double Q-Learning). DDQN consists of two DQN, one is the target network to be trained, the other network generates behavior to improve the target network. After a certain episode, the behavior network is synchronized to the target network. This can prevent the overestimating behavior of just DQN. By decoupling the estimation using two networks, the target network can learn which states are valuable without interfered by the immediate next action estimated by itself. 
