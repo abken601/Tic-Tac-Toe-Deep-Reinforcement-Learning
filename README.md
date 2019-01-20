@@ -125,4 +125,10 @@ Invalid Move: 0.0 %, Win: 0.0 %, Draw: 25.0 %, Lose: 75.0 %
 
 Round 40000
 Invalid Move: 26.1 %, Win: 0.0 %, Draw: 25.2 %, Lose: 48.7 %
+
+We can see that our network learns how not to make an invalid move, but does not know how to win a game. Disappointingly, the final result is more extreme,
+
+Round 200000
+Invalid Move: 0.0 %, Win: 0.0 %, Draw: 0.0 %, Lose: 100.0 %
+
 Despite a disappointing result, you may run the above simulation from main.py in the repository. We will improve the experiment by introducing DDQN (Deep Double Q-Learning). DDQN consists of two DQN, one is the target network to be trained, the other network generates behavior to improve the target network. After a certain episode, the behavior network is synchronized to the target network. This can prevent the overestimating behavior of just DQN. By decoupling the estimation using two networks, the target network can learn which states are valuable without interfered by the immediate next action estimated by itself. 
